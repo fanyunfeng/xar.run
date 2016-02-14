@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+	http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<name>${USER}</name>
+
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>jar</packaging>
+
+	<url>http://maven.apache.org</url>
+
+	<groupId>${FDS.MAVEN.GROUPID}.FDS</groupId>
+	<artifactId>${FDS.MAVEN.ARTIFACTID}.FDS</artifactId>
+	<version>${FDS.MAVEN.VERSION}.FDS</version>
+
+	<dependencies>
+		<dependency>
+			<groupId>${FDS.MAVEN.GROUPID}</groupId>
+			<artifactId>${FDS.MAVEN.ARTIFACTID}</artifactId>
+			<version>${FDS.MAVEN.VERSION}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<classpathScope>run</classpathScope>
+					<mainClass>${FDS.CLASSNAME}</mainClass>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>
